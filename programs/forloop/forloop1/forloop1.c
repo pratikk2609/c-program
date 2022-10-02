@@ -1,9 +1,10 @@
 // i=iterator or counter variable
-#include<stdio.h>
+#include <stdio.h>
 
 int main()
 {
-    for(int i=1; i<=10; i=i+1){
+    for (int i = 1; i <= 10; i = i + 1)
+    {
         printf("%d \n", i);
     }
-    }
+}

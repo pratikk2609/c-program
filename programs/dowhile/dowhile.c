@@ -1,11 +1,12 @@
-#include<stdio.h>
+#include <stdio.h>
 
-int main(){
+int main()
+{
     int i = 1;
-    do{
+    do
+    {
         printf("%d\n", i);
         i++;
-    } while(i<=5);
+    } while (i <= 5);
     return 0;
-    
 }
