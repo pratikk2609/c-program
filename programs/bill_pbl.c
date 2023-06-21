@@ -19,6 +19,11 @@ float getTotal(struct ItemDetail detail[], int n)
     return total;
 }
 
+float calculateTaxes(float total, float taxPercent) 
+{
+    return total * (1 + taxPercent);
+}
+
 int getTotalQuantity(struct ItemDetail detail[], int n)
 {
     int quant = 0;
@@ -33,7 +38,6 @@ int main()
 {
     struct ItemDetail BillItems[50];
     int n, i;
-
     printf("enter number of items: ");
     scanf("%d", &n);
 
@@ -74,8 +78,13 @@ int main()
     float total = getTotal(BillItems, n);
     int quantityTotal = getTotalQuantity(BillItems, n);
 
+    // Calling taxes wala function
+    float taxPercent = 0.18;
+    float totalWithTaxes = calculateTaxes(total, taxPercent);
+
     printf("\n---------------------------------------------------------------------------");
-    printf("\n\nTOTAL \t\t\t%d\t\t\t\t\t%f", quantityTotal, total);
+    printf("\n\nSUBTOTAL \t\t%d\t\t\t\t\t%f", quantityTotal, total);
+    printf("\n\nTOTAL (inc.GST)\t\t\t\t\t\t\t%f", totalWithTaxes);
 
     printf("\n\n----------------------------------THANK YOU---------------------------------\n");
     printf("\n--------------------------------VISIT AGAIN---------------------------------\n");
